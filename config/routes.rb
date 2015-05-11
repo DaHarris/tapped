@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   root 'welcome#index'
   get '/auth/:provider/callback' => 'sessions#create'
   post '/signin' => 'sessions#create'
+  get '/signout' => 'sessions#destroy'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
