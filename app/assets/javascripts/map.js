@@ -16,6 +16,10 @@ $(document).ready(function() {
 
 
         map.setCenter(pos);
+        var marker = new google.maps.Marker({
+            position: pos,
+            map: map
+        });
       }, function() {
         handleNoGeolocation(true);
       });
