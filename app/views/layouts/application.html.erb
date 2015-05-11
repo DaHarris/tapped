@@ -28,14 +28,18 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
-        <li class="has-dropdown">
+        <!-- <li class="has-dropdown">
           <a href="#">Menu</a>
-          <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
+          <ul class="dropdown"> -->
+          <% if current_user %>
+          <li><%= current_user.username %></li>
+          <% else %>
+            <li class = "signin"><a href="#">Sign In</a></li>
+            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
+          <% end %>
           </ul>
         </li>
-      </ul>
+      <!-- </ul> -->
 
     </section>
   </nav>
