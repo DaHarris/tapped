@@ -64,6 +64,7 @@ $(document).ready(function() {
               map: map,
               title: title
           });
+          google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});
         }
       }, function() {
         handleNoGeolocation(true);
