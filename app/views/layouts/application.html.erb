@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="classie.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -33,12 +33,27 @@
           <ul class="dropdown">
             <li><a href="#">First link in dropdown</a></li>
             <li class="active"><a href="#">Active link in dropdown</a></li>
+            <div class="container">
+            	<div class="main">
+            		<section>
+            			<!-- Class "cbp-spmenu-open" gets applied to menu -->
+            			<button id="showRight">Brewery Info</button>
+            		</section>
+            	</div>
+            </div>
           </ul>
         </li>
       </ul>
 
     </section>
   </nav>
+
+<nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+	<h3>Brewery Info</h3>
+	<a href="#">Beer</a>
+</nav>
+
+
 
     <%= yield %>
 
