@@ -8,6 +8,22 @@ var menuPull = function(brewName) {
 	// classie.toggle( this, 'active' );
 	classie.add( menuRight, 'cbp-spmenu-open' );
 	$('.brewery-name').text(brewName);
+
+	$.ajax({
+		data: {brewery_name: brewName},
+		type: 'post',
+		url: "/breweries/brewery",
+		success: function(data){
+			addAddress(data);
+		}
+	});
+
+
 	// disableOther( 'showRight' );
 
 };
+
+function addAddress(data){
+	$('.side-content').html(data.streetAddress + '<br/>' + data.phone);
+	$('.brewery-name').append('<img class="logo" src='+ data.logo + '></img>');
+}

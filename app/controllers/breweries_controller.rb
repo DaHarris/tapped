@@ -21,4 +21,8 @@ class BreweriesController <  ApplicationController
       brewery.save
     end
   end
+
+  def brewery
+    render json: Brewery.find_by_brewery_name(params[:brewery_name])
+  end
 end

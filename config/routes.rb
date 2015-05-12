@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/auth/:provider/callback' => 'sessions#create'
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
+  post '/breweries/brewery' => 'breweries#brewery'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
