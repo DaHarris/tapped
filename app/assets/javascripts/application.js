@@ -13,6 +13,10 @@
 //= require jquery
 //= require jquery_ujs
 //= require foundation
-//= require_tree .
+//= require uri
+//= require jsonp
+//= require map
+//= require sign_in
+
 
 $(function(){ $(document).foundation(); });

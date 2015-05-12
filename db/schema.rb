@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150511174338) do
+ActiveRecord::Schema.define(version: 20150511221850) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,11 +32,17 @@ ActiveRecord::Schema.define(version: 20150511174338) do
   add_index "beers", ["user_id"], name: "index_beers_on_user_id", using: :btree
 
   create_table "breweries", force: :cascade do |t|
-    t.string "brewery_name"
-    t.string "logo"
-    t.string "description"
-    t.string "location"
-    t.string "menu"
+    t.string  "brewery_name"
+    t.string  "logo"
+    t.string  "description"
+    t.string  "menu"
+    t.string  "latitude",      default: ""
+    t.string  "longitude",     default: ""
+    t.string  "streetAddress", default: ""
+    t.integer "zipcode"
+    t.string  "website",       default: ""
+    t.string  "phone",         default: ""
+    t.string  "established",   default: ""
   end
 
   create_table "tours", force: :cascade do |t|
@@ -51,6 +57,7 @@ ActiveRecord::Schema.define(version: 20150511174338) do
     t.string "oath_user_id"
     t.string "token"
     t.string "secret"
+    t.string "username"
   end
 
   add_foreign_key "beers", "breweries"
