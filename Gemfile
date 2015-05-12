@@ -30,7 +30,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem 'twitter', '~> 5.14.0'
 gem 'omniauth', '~> 1.2.2'
 gem 'omniauth-twitter'
-
+gem 'carrierwave'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
