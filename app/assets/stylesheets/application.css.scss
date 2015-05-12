@@ -78,12 +78,20 @@
 	-moz-transition: all 0.5s ease;
 	transition: all 0.5s ease;
 }
+
+/* Modal on top of map*/
 .reveal-modal.open{
   position: absolute;
   z-index: 20000;
 }
-//
-// #map-canvas{
-//   position: relative;
-//   z-index: 1;
-// }
+
+
+.username{
+  display: block;
+  color: #FFFFFF;
+  padding: 12px 0 12px 0;
+  font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
+  font-size: 0.8125rem;
+  font-weight: normal;
+  text-transform: none;
+}
