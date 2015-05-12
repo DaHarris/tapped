@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="classie.js"></script>
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+ <head>
+   <meta charset="utf-8" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
-    <%= stylesheet_link_tag    "application" %>
-    <%= javascript_include_tag "vendor/modernizr" %>
-    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
-    <%= csrf_meta_tags %>
-  </head>
+   <%= stylesheet_link_tag    "application" %>
+   <%= javascript_include_tag "vendor/modernizr" %>
+   <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+   <%= csrf_meta_tags %>
+ </head>
 
-  <body>
+ <body>
 
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
-  <script src="jquery.js"></script>
-  <script src="uri.js"></script>
-  <script src="jsonp.js"></script>
-
-  <nav class="top-bar" data-topbar role="navigation">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="#">Tapped</a></h1>
-      </li>
-       <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-      <li class = "add_beer_pic"><li>
-    </ul>
-
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        
-        <!-- <li class="has-dropdown">
-          <a href="#">Menu</a>
-<<<<<<< HEAD
-          <ul class="dropdown">
-            <li><a href="#">First link in dropdown</a></li>
-            <li class="active"><a href="#">Active link in dropdown</a></li>
-            <div class="container">
-            	<div class="main">
-
-            			<!-- Class "cbp-spmenu-open" gets applied to menu -->
+ <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&signed_in=true"></script>
+ <script src="jquery.js"></script>
+ <script src="uri.js"></script>
+ <script src="jsonp.js"></script>
+ <script src="classie.js"></script>
 
 
-          <ul class="dropdown">
-          <% if current_user %>
-          <li class="username">Welcome, @<%= current_user.username %>!</li>
-          <li><%= link_to 'Sign Out', '/signout' %></li>
+ <nav class="top-bar" data-topbar role="navigation">
+   <ul class="title-area">
+     <li class="name">
+       <h1><a href="#">Tapped</a></h1>
+  
+     </li>
+     <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
+	      <h3>Brewery Info</h3>
+	       <a href="#">Beer</a>
+      </nav>
 
-          <% else %>
-            <li class = "signin"><a href="#">Sign In</a></li>
-            <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
-          <% end %>
-          </ul>
-        </li>
-      <!-- </ul> -->
 
-    </section>
-  </nav>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+     <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+     <li class = "add_beer_pic"><li>
+   </ul>
+
+   <section class="top-bar-section">
+     <ul class="right">
+
+         <% if current_user %>
+         <li><%= current_user.username %></li>
+         <li><%= link_to 'Sign Out', '/signout' %></li>
+
+         <% else %>
+           <li class = "signin"><a href="#">Sign In</a></li>
+         <% end %>
+         </ul>
+       </li>
+
+   </section>
+ </nav>
 
 
 
+   <%= yield %>
 
 
-    <%= yield %>
-
-
-
-  </body>
+ </body>
 </html>
