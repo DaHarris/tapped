@@ -1,6 +1,26 @@
-<div id="map-canvas" style='height:96%;'>
+<!-- <div id="map-canvas" style='height:96%;'> -->
 
-<div id="myModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+<div id="signInModal" class="reveal-modal" data-reveal>
   <p><%= link_to 'Sign In', '/auth/twitter' %></p>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
 </div>
+
+<div id="beerModal" class="reveal-modal" data-reveal>
+  <%= form_for [@brewery, @beer], html: { multipart: true} do |f| %>
+    <%= f.label :beer_name %>
+    <%= f.text_field :beer_name %>
+    <%= f.label :type %>
+    <%= f.text_field :type %>
+    <%= f.label :description %>
+    <%= f.text_field :description %>
+    <%= f.label :rating %>
+    <%= f.number_field :rating %>
+    <%= f.label :abv %>
+    <%= f.number_field :abv %>
+    <%= f.label :ibu %>
+    <%= f.number_field :ibu %>
+    <%= f.label :beer_pic %>
+    <%= f.file_field :beer_pic %>
+    <%= f.submit %>
+  <% end %>
+</div>  
