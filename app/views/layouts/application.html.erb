@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+    <script src="classie.js"></script>
     <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
 
     <%= stylesheet_link_tag    "application" %>
@@ -32,12 +32,24 @@
     <section class="top-bar-section">
       <!-- Right Nav Section -->
       <ul class="right">
+        
         <!-- <li class="has-dropdown">
           <a href="#">Menu</a>
-          <ul class="dropdown"> -->
+<<<<<<< HEAD
+          <ul class="dropdown">
+            <li><a href="#">First link in dropdown</a></li>
+            <li class="active"><a href="#">Active link in dropdown</a></li>
+            <div class="container">
+            	<div class="main">
+
+            			<!-- Class "cbp-spmenu-open" gets applied to menu -->
+
+
+          <ul class="dropdown">
           <% if current_user %>
           <li class="username">Welcome, @<%= current_user.username %>!</li>
           <li><%= link_to 'Sign Out', '/signout' %></li>
+
           <% else %>
             <li class = "signin"><a href="#">Sign In</a></li>
             <!-- <li class="active"><a href="#">Active link in dropdown</a></li> -->
@@ -48,6 +60,10 @@
 
     </section>
   </nav>
+
+
+
+
 
     <%= yield %>
 
