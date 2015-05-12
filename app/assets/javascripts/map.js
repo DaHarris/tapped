@@ -16,10 +16,55 @@ $(document).ready(function() {
 
 
         map.setCenter(pos);
-        var marker = new google.maps.Marker({
-            position: pos,
-            map: map
-        });
+
+        var breweries;
+
+        function getBreweries(lat, long) {
+          var latitude = lat;
+          var longitude = long;
+          var key = "2d7027bd882e632ce62104e5909937c3";
+          var begin = "http://api.brewerydb.com/v2/search/geo/point?";
+          var fullUrl = begin + "lat=" + latitude + "&lng=" + longitude + "&key=" + key + "&format=json";
+
+          $.jsonp({
+           url: fullUrl,
+
+           success: function(data){
+             var breweries = data["data"];
+             var counter = data["data"].length;
+             var params = {brewery: {breweries}}
+             $.ajax({
+               url: "/breweries",
+               type: "post",
+               data: params
+             })
+             for (var i=0;i<counter;i++) {
+               lat = data["data"][i].latitude;
+               lng = data["data"][i].longitude;
+               name = data["data"][i].brewery.name;
+               setMarker(lat, lng, name);
+             }
+           }
+          });
+        };
+
+        getBreweries(position.coords.latitude,position.coords.longitude);
+
+        setMarker();
+
+        function setMarker(lat, long, title) {
+          if (lat === undefined && long === undefined) {
+            lat = position.coords.latitude;
+            long = position.coords.longitude;
+            title = "Your Location";
+          }
+          pos = new google.maps.LatLng(lat,long);
+          var marker = new google.maps.Marker({
+              position: pos,
+              map: map,
+              title: title
+          });
+        }
       }, function() {
         handleNoGeolocation(true);
       });
@@ -46,4 +91,6 @@ $(document).ready(function() {
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
+
+
 });
