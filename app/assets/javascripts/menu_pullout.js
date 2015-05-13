@@ -13,7 +13,6 @@ var menuPull = function(brewName) {
 		url: "/breweries/brewery",
 		success: function(data){
 			addAddress(data);
-			addLogo(data);
 		}
 	});
 };
