@@ -13,8 +13,17 @@
 
 .cbp-spmenu h3 {
 	color: #302F3B;
-	font-size: 1.9em;
-	padding: 20px;
+	font-size: 1.6em;
+	padding: 10px;
+	margin: 0;
+	font-weight: 300;
+	background: #0d77b6;
+}
+
+.cbp-spmenu h4 {
+	color: #FFFFFF;
+	font-size: .7em;
+	padding: 10px;
 	margin: 0;
 	font-weight: 300;
 	background: #0d77b6;
@@ -101,9 +110,4 @@
 	font-family: "Helvetica Neue", Helvetica, Roboto, Arial, sans-serif;
   font-size: 0.8125rem;
   font-weight: normal;
-}
-
-.logo{
-	width: 100 px;
-	height: 100 px;
 }

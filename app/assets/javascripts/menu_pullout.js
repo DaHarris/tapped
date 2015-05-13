@@ -1,8 +1,8 @@
 var menuPull = function(brewName) {
-	var
-	menuRight = document.getElementById( 'cbp-spmenu-s2' );
+
+	var menuRight = document.getElementById( 'cbp-spmenu-s2' );
 	classie.add( menuRight, 'cbp-spmenu-open' );
-	$('.brewery-name').text(brewName);
+	$('.brewery-name').html(brewName + '<br />');
 
 	$.ajax({
 		data: {brewery_name: brewName},
@@ -10,12 +10,16 @@ var menuPull = function(brewName) {
 		url: "/breweries/brewery",
 		success: function(data){
 			addAddress(data);
+			addLogo(data);
 		}
 	});
 };
 
 
 function addAddress(data){
-	$('.side-content').html(data.streetAddress + '<br/>' + data.phone);
-	$('.brewery-name').append('<img class="logo" src='+ data.logo + '></img>');
+	$('.brewery-info').html(data.streetAddress + '<br/>' + data.phone);
+}
+
+function addLogo(data){
+	$('h4').html('<img src='+ data.logo + '></img>');
 }
