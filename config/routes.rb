@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/signout' => 'sessions#destroy'
   post '/breweries/brewery' => 'breweries#brewery'
   post '/beers/create' => 'beers#create'
-
+  get '/beers/create' => 'beers#create'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
