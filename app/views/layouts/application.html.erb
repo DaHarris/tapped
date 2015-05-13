@@ -23,13 +23,19 @@
  <nav class="top-bar" data-topbar role="navigation">
    <ul class="title-area">
      <li class="name">
-       <h1><a href="#">Tapped</a></h1>
-
+       <h1><a href="#" id="name-header">Tapped</a></h1>
      </li>
      <nav class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-right" id="cbp-spmenu-s2">
-          <h3 class = "brewery-name"></h3>
+       <div class="brewery-topper">
+          <h1 class = "brewery-name"></h1>
+          <p class="description"></p>
+          <div class ="info">
+            <p class="address"></p>
+            <p class="phone"></p>
+          </div>
 	       <%= render "beer" %>
-      </nav>
+       </div>
+    </nav>
 
 
      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
@@ -40,11 +46,11 @@
      <ul class="right">
 
          <% if current_user %>
-         <li><%= current_user.username %></li>
-         <li><%= link_to 'Sign Out', '/signout' %></li>
+         <li id="login"><%= current_user.username %></li>
+         <li id="login"><%= link_to 'Sign Out', '/signout' %></li>
 
          <% else %>
-           <li class = "signin"><a href="#">Sign In</a></li>
+           <li class = "signin" id="login"><a href="#">Sign In</a></li>
          <% end %>
          </ul>
        </li>
