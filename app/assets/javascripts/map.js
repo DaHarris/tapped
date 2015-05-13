@@ -59,10 +59,14 @@ $(document).ready(function() {
             title = "Your Location";
           }
           pos = new google.maps.LatLng(lat,long);
+          var iconBase = 'https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/26/beer.png';
+              // iconBase.height = '20px';
+              // iconBase.width = '20px';
           var marker = new google.maps.Marker({
               position: pos,
               map: map,
-              title: title
+              title: title,
+              icon: iconBase
           });
 
           google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});
