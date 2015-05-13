@@ -1,4 +1,9 @@
 $(document).ready(function(){
+
+  $('body').on('click', '.fi-x', function(){
+    $('#cbp-spmenu-s2').removeClass('cbp-spmenu-open');
+  });
+
   $('.signin').on('click', function(){
     $('#signInModal').foundation('reveal', 'open');
   });
@@ -20,6 +25,6 @@ $(document).ready(function(){
     //       alert("Data");
     //     }
     // });
-});
+  });
 
 });
