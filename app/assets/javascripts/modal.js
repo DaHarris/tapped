@@ -20,6 +20,12 @@ $(document).ready(function(){
     //       alert("Data");
     //     }
     // });
-});
+  });
+
+  $('.new-beer').on('click', function(e){
+    e.preventDefault();
+    console.log(e);
+  });
+
 
 });

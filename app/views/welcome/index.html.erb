@@ -7,6 +7,13 @@
 
 <div id="beerModal" class="reveal-modal" data-reveal>
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+  <!-- <% if flash.now[:alert] %>
+  <% if Beer.new.errors.full_messages.any? %>
+    <% Beer.new.errors.full.messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
+  <% end %> -->
   <div id = "beer-form"><%= form_for Beer.new, url: beers_create_path, method: :post, html: { multipart: true} do |f| %>
     <%= f.label :beer_name %>
     <%= f.text_field :beer_name %>
@@ -24,5 +31,5 @@
     <%= f.file_field :beer_pic %>
     <%= hidden_field_tag :brewery_name %>
     <div class='new-beer'><%= f.submit %></div></div>
-  <% end %>
-</div>
+    <% end %>
+  </div>

@@ -4,8 +4,11 @@ class BeersController < ApplicationController
     @brewery = Brewery.find_by_brewery_name(params[:brewery_name])
     @beer.brewery_id = @brewery.id
     @beer.user_id = current_user.id
-    @beer.save
-    redirect_to root_path
+    if @beer.save
+      redirect_to root_path
+    else
+      respond_with json: {:errors => @beer.errors.full_messages}
+    end
   end
 
   def update
