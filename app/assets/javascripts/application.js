@@ -16,7 +16,7 @@
 //= require uri
 //= require jsonp
 //= require map
-//= require sign_in
+//= require modal
 //= require classie
 //= require menu_pullout
 

@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   # See how all your routes lay out with "rake routes".
 
   resources :breweries
+  # resources :beers
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   post '/signin' => 'sessions#create'
   get '/signout' => 'sessions#destroy'
   post '/breweries/brewery' => 'breweries#brewery'
+  post '/beers/create' => 'beers#create'
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
