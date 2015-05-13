@@ -7,7 +7,8 @@ class BeersController < ApplicationController
     if @beer.save
       redirect_to root_path
     else
-      respond_with json: {:errors => @beer.errors.full_messages}
+      # render json: {:errors => @beer.errors.full_messages}
+      render json: @beer.errors.full_messages
     end
   end
 

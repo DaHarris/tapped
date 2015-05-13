@@ -24,7 +24,24 @@ $(document).ready(function(){
 
   $('.new-beer').on('click', function(e){
     e.preventDefault();
-    console.log(e);
+    $.ajax({
+      data: $("#new_beer").serialize(),
+      type: 'post',
+      url: "/beers/create"
+    })
+    .done(function(data){
+      if($.isArray(data) === true) {
+        var errors = data;
+        for(var i = 0; i < errors.length; i++){
+          $('#beer-form > ul').append('<li>'+ errors[i] + '</li>');
+        }
+      } else {
+        $('#new_beer')[0].reset();
+        $('#beer-form >ul').text("Beer was successfully created. Add another!");
+      }
+      });
+
+
   });
 
 
