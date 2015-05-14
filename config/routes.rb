@@ -13,6 +13,8 @@ Rails.application.routes.draw do
   post '/breweries/brewery' => 'breweries#brewery'
   post '/beers/create' => 'beers#create'
   get '/beers/create' => 'beers#create'
+  post '/tours/create' => 'tours#create'
+  post '/breweries/find_brewery' => 'breweries#find_brewery'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

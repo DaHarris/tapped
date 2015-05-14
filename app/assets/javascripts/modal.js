@@ -50,6 +50,7 @@ processData: false,
         var errors = data;
         for(var i = 0; i < errors.length; i++){
           $('#beer-form > ul').append('<li>'+ errors[i] + '</li>');
+          console.log(data);
         }
       } else {
         $('#new_beer')[0].reset();

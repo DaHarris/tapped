@@ -27,4 +27,9 @@ class BreweriesController <  ApplicationController
     @beers = @brewery.beers
     render :json => {brewery: @brewery, beers: @beers}
   end
+
+  def find_brewery
+    @brewery = Brewery.find_by_brewery_name(params[:brewery_name])
+    render json: @brewery
+  end
 end
