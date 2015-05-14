@@ -24,7 +24,11 @@ class BreweriesController <  ApplicationController
 
   def brewery
     @brewery = Brewery.find_by_brewery_name(params[:brewery_name])
-    @beers = @brewery.beers.where(user_id: current_user.id)
+    if current_user.nil?
+      @beers = Beer.none
+    else
+      @beers = @brewery.beers.where(user_id: current_user.id)
+    end
     render :json => {brewery: @brewery, beers: @beers}
   end
 

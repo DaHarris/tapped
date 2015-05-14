@@ -10,7 +10,11 @@ class ToursController < ApplicationController
   end
 
   def visited
-    @tours = current_user.tours
+    if current_user.nil?
+      @tours = Tour.none
+    else
+      @tours = current_user.tours
+    end
     @breweries = Brewery.all
     @visited = []
     @not_visited = []
