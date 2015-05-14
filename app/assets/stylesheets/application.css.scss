@@ -104,6 +104,10 @@
 	color: #47a3da;
 }
 
+.fi-x:hover {
+	opacity: 0.7;
+}
+
 /* Orientation-dependent styles for the content of the menu */
 
 .cbp-spmenu-vertical {
@@ -115,6 +119,11 @@
 
 .cbp-spmenu-vertical a {
 	padding: 1em;
+}
+
+.gm-style {
+	height: auto;
+	width: auto;
 }
 
 

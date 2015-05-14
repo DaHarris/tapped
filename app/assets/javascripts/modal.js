@@ -2,6 +2,7 @@ $(document).ready(function(){
 
   $('body').on('click', '.fi-x', function(){
     $('#cbp-spmenu-s2').removeClass('cbp-spmenu-open');
+    $('#map-canvas').css('width','100%');
   });
 
   $('.signin').on('click', function(){

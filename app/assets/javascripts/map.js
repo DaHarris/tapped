@@ -5,7 +5,7 @@ $(document).ready(function() {
     var mapOptions = {
       zoom: 13,
     };
-    map = new google.maps.Map(document.getElementById('map-canvas'),
+    var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
 
     // Try HTML5 geolocation
@@ -16,6 +16,21 @@ $(document).ready(function() {
 
 
         map.setCenter(pos);
+
+        function centerBrewery(lat, long) {
+          $('#map-canvas').css('width','30%');
+          google.maps.event.trigger(map, "resize");
+          position = new google.maps.LatLng(lat, long);
+          map.setCenter(position);
+          map.setZoom(15);
+        }
+
+        $('body').on('click', '.fi-x', function(){
+          $('#cbp-spmenu-s2').removeClass('cbp-spmenu-open');
+          $('#map-canvas').css('width','100%');
+          google.maps.event.trigger(map, "resize");
+        });
+
 
         var breweries;
 
@@ -70,6 +85,7 @@ $(document).ready(function() {
           });
 
           google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});
+          google.maps.event.addListener(marker, 'click', function(){centerBrewery(lat, long);});
         }
       }, function() {
         handleNoGeolocation(true);
