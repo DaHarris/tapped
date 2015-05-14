@@ -41,7 +41,8 @@
           <div class="beer-buttons">
             <% if current_user %>
               <li class = "add-beer"><a href="#">Add Beer</a></li>
-              <li class = "been-here"><a href="#">Drank Here</a></li>
+              <li class = "been-here"><a href="#">Drink Here</a></li>
+              <%= javascript_tag "var userId = #{current_user.id};" %>
             <% else %>
               <p>Please sign in to rate beers and log breweries.</p>
             <% end %>

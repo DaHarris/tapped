@@ -24,6 +24,13 @@ class ToursController < ApplicationController
     render :json => {visited: @visited, not_visited: @not_visited}
   end
 
+  def drank_here_button
+    # Permission.find_by(user_id: params[:user_id], project_id: params[:project_id])
+
+    @tour = Tour.find_by(user_id: params[:user_id], brewery_id: params[:brewery_id])
+    render :json => @tour
+  end
+
 
   private
   def tour_params

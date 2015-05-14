@@ -17,6 +17,7 @@ var menuPull = function(brewName) {
 		success: function(data){
 			addAddress(data.brewery);
 			addBeers(data.beers);
+			drankHereButton(data.brewery);
 		}
 	});
 };
@@ -40,4 +41,19 @@ function addAddress(data){
 	$('.address').append(data.streetAddress + ", " + data.zipcode);
 	$('.phone').append(data.phone);
 	$('.brewery-info').html('<br>' + data.streetAddress + '<br/>' + data.phone);
+}
+
+function drankHereButton(thing){
+	$.ajax({
+		url: '/tours/drank_here_button',
+		type: 'post',
+		data: {brewery_id: thing.id, user_id: userId}
+	})
+	.done(function(data){
+		if(data === null){
+			$('.been-here > a').text('Drink Here');
+		} else {
+			$('.been-here > a').text('You Drank Here!');
+		}
+	});
 }
