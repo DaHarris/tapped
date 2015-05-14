@@ -14,10 +14,27 @@
 	width: 100%;
 }
 
+#beer-name {
+	margin: 0px;
+}
+
+#beer-type {
+	margin: 0px;
+}
+
+#beer-info {
+	margin: 0px;
+}
+
+#beer-description {
+	margin: 0px;
+}
+
 .brews {
 	background-color: #333333;
 	height: 100%;
 	width: 100%;
+	float: left;
 }
 
 #beer-image {
@@ -60,7 +77,6 @@
 .beer-buttons {
 	width: 100%;
 	height: 7% !important;
-	height: auto;
 	background-color: #FFFFFF;
 }
 
@@ -105,11 +121,13 @@
 }
 
 .address {
+	margin-bottom: 0;
 	color: #898989;
 	font-family: 'Poiret One', cursive;
 }
 
 .phone {
+	margin-bottom: 0;
 	color: #343434;
 	font-family: 'Poiret One', cursive;
 }
@@ -153,7 +171,7 @@
 	font-family: 'Poiret One', cursive;
 	color: #c3c3c3;
 	margin-left: 2%;
-	height: 80%;
+	height: 70%;
 	overflow: auto;
 	width: 98%;
 }
@@ -255,6 +273,13 @@
 //****************************************//
 
 @media screen and (max-width: 480px) {
+	.brewery-topper {
+		float: left;
+	}
+
+	.brew {
+		height: 10%;
+	}
 
 	.left {
 		width: 100%;
@@ -263,7 +288,9 @@
 	}
 
 	.description {
-		height: 70%;
+		height: 55%;
+		float: left;
+		margin: 0;
 	}
 
 	.info {
@@ -271,6 +298,24 @@
 		display: block;
 		width: 100%;
 		height: 50%;
+	}
+
+	.beer-buttons {
+		width: 100%;
+		float: left;
+		height: 7% !important;
+	}
+
+	.add-beer {
+		width: 40%;
+	}
+
+	.est {
+		text-align: center;
+	}
+
+	.been-here {
+		width: 40%;
 	}
 
 	.cbp-spmenu-left {
