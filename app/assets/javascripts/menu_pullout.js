@@ -38,6 +38,6 @@ function addAddress(data){
 	$('.logo').attr("src", data.logo);
 	$('.description').append(data.description);
 	$('.address').append(data.streetAddress + ", " + data.zipcode);
-	$('.phone').append(data.phone)
+	$('.phone').append(data.phone);
 	$('.brewery-info').html('<br>' + data.streetAddress + '<br/>' + data.phone);
 }
