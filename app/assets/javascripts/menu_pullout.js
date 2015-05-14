@@ -25,7 +25,11 @@ function addBeers(data){
 	for (var i=0;i<data.length;i++) {
 		$('.brews').append("<div class='brew' id=" + data[i].beer_name + ">");
 		var id = "#" + data[i].beer_name;
-		$(id).append("<img src=" + data[i].beer_pic.url + " id='beer-image'></img>");
+		if(data[i].beer_pic.url === null ){
+			$(id).append("<img src='/assets/beer_cheers.jpg' id='beer-image'></img>");
+		} else {
+			$(id).append("<img src='" + data[i].beer_pic.url + "' id='beer-image'></img>");
+		}
 		$(id).append("<h3 id='beer-name'>" + data[i].beer_name + "</h3>");
 		$(id).append("<h6 id='beer-type'>Type: " + data[i].type_of + "</h6>");
 		$(id).append("<p id='beer-info'>IBU:" + data[i].ibu + "    ABV:" + data[i].abv + "</h3>");
