@@ -5,7 +5,7 @@ class BeersController < ApplicationController
     @beer.brewery_id = @brewery.id
     @beer.user_id = current_user.id
     if @beer.save
-      redirect_to root_path
+      render json: @beer
     else
       # render json: {:errors => @beer.errors.full_messages}
       render json: @beer.errors.full_messages
