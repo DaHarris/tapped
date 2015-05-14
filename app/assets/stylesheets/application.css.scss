@@ -111,8 +111,14 @@
 	font-family: 'Lobster', cursive;
 }
 
-#login {
-	font-family: 'Poiret One', cursive;
+.username {
+	display: block;
+	color: #FFF;
+	padding: 12px 0 12px 0;
+	font-family: "Helvetica Neue", Helvitica, Roboto, Arial, sans-serif;
+	font-size: 0.8125rem;
+	font-weight: normal;
+	text-transform: none;
 }
 
 .est {
