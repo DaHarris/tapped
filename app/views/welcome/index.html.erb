@@ -9,7 +9,7 @@
   <a class="close-reveal-modal" aria-label="Close">&#215;</a>
   <div id = "beer-form">
     <ul></ul>
-    <%= form_for Beer.new, url: beers_create_path, method: :post, html: { multipart: true} do |f| %>
+    <%= form_for Beer.new, url: beers_create_path, method: :post, html: { multipart: true}, remote: true do |f| %>
     <%= f.label :beer_name %>
     <%= f.text_field :beer_name %>
     <%= f.label :type_of, "Type of Beer" %>

@@ -36,6 +36,7 @@ gem 'omniauth-twitter'
 gem 'fog'
 gem 'carrierwave'
 gem 'mini_magick'
+gem 'remotipart', '~> 1.2'
 
 #ajax response from rails
 gem 'responders', '~> 2.0'

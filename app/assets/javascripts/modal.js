@@ -30,7 +30,7 @@ $(document).ready(function(){
 
 
   $('.new-beer').on('click', function(e){
-    e.preventDefault();
+
     $.ajax({
       data: $("#new_beer").serialize(),
       type: 'post',
