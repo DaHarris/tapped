@@ -7,7 +7,78 @@
 @import 'foundation-icons';
 @import url(http://fonts.googleapis.com/css?family=Poiret+One|Lobster|Francois+One);
 
+.brew {
+	background-color: #FFFFFF;
+	margin-top: 2px;
+	height: 20%;
+	width: 100%;
+}
 
+.brews {
+	background-color: #333333;
+	height: 100%;
+	width: 100%;
+}
+
+#beer-image {
+	float: left;
+	height: 100%;
+	width: 15%;
+}
+
+#beer-name {
+	display: inline-block;
+	font-family: 'Lobster', cursive;
+	margin-left: 3%;
+	width: 25%;
+}
+
+#beer-type {
+	display: inline-block;
+	font-family: 'Francois One', sans-serif;
+	color: #333333;
+	margin-right: 10%;
+	width: 20%;
+}
+
+#beer-info {
+	display: inline-block;
+	font-family: 'Poiret One', cursive;
+	color: #898989;
+	width: 20%;
+	margin-right: 3%;
+}
+
+#beer-description {
+	float: left;
+	width: 65%;
+	font-family: 'Poiret One', cursive;
+	margin-right: 10%;
+	margin-left: 5%;
+}
+
+.beer-buttons {
+	width: 100%;
+	height: 7% !important;
+	height: auto;
+	background-color: #FFFFFF;
+}
+
+.add-beer {
+	background-color: #333333;
+	text-align: center;
+	margin-left: 2%;
+	width: 20%;
+	float: left;
+}
+
+.been-here {
+	background-color: #333333;
+	text-align: center;
+	margin-left: 2%;
+	width: 20%;
+	float: left;
+}
 
 .left {
 	width: 60%;
@@ -118,7 +189,6 @@
 }
 
 .cbp-spmenu-vertical a {
-	padding: 1em;
 }
 
 .gm-style {

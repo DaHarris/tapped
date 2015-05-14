@@ -31,9 +31,18 @@ $(document).ready(function(){
 
   $('.new-beer').on('click', function(e){
     e.preventDefault();
+    var formData = new FormData();
+    var params = $("#new_beer").serializeArray();
+    for (var i=0;i<params.length;i++) {
+      formData.append(params[i].name, params[i].value);
+    }
+    formData.append("beer[beer_pic]", $('#beer_beer_pic')[0].files[0]);
     $.ajax({
-      data: $("#new_beer").serialize(),
+      data: formData,
       type: 'post',
+      cache: false,
+contentType: false,
+processData: false,
       url: "/beers/create"
     })
     .done(function(data){
