@@ -3,7 +3,7 @@ var menuPull = function(brewName) {
 	var menuRight = document.getElementById( 'cbp-spmenu-s2' );
 	classie.add( menuRight, 'cbp-spmenu-open' );
 	$('.brewery-name').text(brewName);
-	$('.brewery-name').prepend('<i class="fi-x"></i>' + " ");
+	$('.brewery-name').prepend('<i class="fi-x"></i>');
 	$('.description').text("");
 	$('.address').text("");
 	$('.phone').text("");
