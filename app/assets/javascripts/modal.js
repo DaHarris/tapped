@@ -50,15 +50,23 @@ processData: false,
         var errors = data;
         for(var i = 0; i < errors.length; i++){
           $('#beer-form > ul').append('<li>'+ errors[i] + '</li>');
-          console.log(data);
         }
       } else {
         $('#new_beer')[0].reset();
         $('#beer-form >ul').text("Beer was successfully created. Add another!");
+        addNewBeers(data);
       }
-      });
-
-
+    });
   });
 
 });
+
+function addNewBeers(data){
+	$('.brews').append("<div class='brew' id=" + data.beer_name + ">");
+	var id = "#" + data.beer_name;
+	$(id).append("<img src=" + data.beer_pic.url + " id='beer-image'></img>");
+	$(id).append("<h3 id='beer-name'>" + data.beer_name + "</h3>");
+	$(id).append("<h6 id='beer-type'>Type: " + data.type_of + "</h6>");
+	$(id).append("<p id='beer-info'>IBU:" + data.ibu + "    ABV:" + data.abv + "</h3>");
+	$(id).append("<p id='beer-description'>" + data.description + "</p></div>");
+}
