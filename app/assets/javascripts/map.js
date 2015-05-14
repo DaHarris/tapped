@@ -74,9 +74,13 @@ $(document).ready(function() {
             title = "Your Location";
           }
           pos = new google.maps.LatLng(lat,long);
+
+          if (title == "Your Location") {
+            iconBase = 'http://mt.googleapis.com/vt/icon/name=icons/spotlight/spotlight-poi.png';
+          } else {
           var iconBase = 'https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/26/beer.png';
-              // iconBase.height = '20px';
-              // iconBase.width = '20px';
+          }
+
           var marker = new google.maps.Marker({
               position: pos,
               map: map,
@@ -84,8 +88,10 @@ $(document).ready(function() {
               icon: iconBase
           });
 
-          google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});
-          google.maps.event.addListener(marker, 'click', function(){centerBrewery(lat, long);});
+          if (title != "Your Location") {
+            google.maps.event.addListener(marker, 'click', function(){menuPull(marker.title);});
+            google.maps.event.addListener(marker, 'click', function(){centerBrewery(lat, long);});
+          }
         }
       }, function() {
         handleNoGeolocation(true);
