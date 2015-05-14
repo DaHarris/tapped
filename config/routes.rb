@@ -15,6 +15,7 @@ Rails.application.routes.draw do
   get '/beers/create' => 'beers#create'
   post '/tours/create' => 'tours#create'
   post '/breweries/find_brewery' => 'breweries#find_brewery'
+  get '/tours/visited' => 'tours#visited'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

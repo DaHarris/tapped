@@ -3,7 +3,7 @@ $(document).ready(function() {
 
   function initialize() {
     var mapOptions = {
-      zoom: 13,
+      zoom: 14,
     };
     var map = new google.maps.Map(document.getElementById('map-canvas'),
         mapOptions);
@@ -33,6 +33,19 @@ $(document).ready(function() {
 
 
         var breweries;
+        var visited_breweries;
+        var not_visited;
+
+        function visited() {
+          $.ajax({
+            url: "/tours/visited",
+            type: "get"
+          }).success(function(data) {
+            visited_breweries = data.visited;
+            not_visited = data.not_visited;
+            getBreweries(position.coords.latitude,position.coords.longitude);
+          });
+        }
 
         function getBreweries(lat, long) {
           var latitude = lat;
@@ -63,9 +76,8 @@ $(document).ready(function() {
           });
         };
 
-        getBreweries(position.coords.latitude,position.coords.longitude);
-
         setMarker();
+        visited();
 
         function setMarker(lat, long, title) {
           if (lat === undefined && long === undefined) {
@@ -78,7 +90,19 @@ $(document).ready(function() {
           if (title == "Your Location") {
             iconBase = 'http://mt.googleapis.com/vt/icon/name=icons/spotlight/spotlight-poi.png';
           } else {
-          var iconBase = 'https://cdn2.iconfinder.com/data/icons/windows-8-metro-style/26/beer.png';
+            var check = false;
+            for (var i=0;i<visited_breweries.length;i++) {
+              if (visited_breweries[i].brewery_name == title) {
+                check = true;
+                break;
+              }
+            }
+            if (check == false) {
+
+              var iconBase = 'http://icons.iconarchive.com/icons/icons8/ios7/32/Food-Beer-icon.png';
+            } else {
+              var iconBase = 'http://icons.iconarchive.com/icons/icons8/windows-8/32/Food-Beer-icon.png';
+            }
           }
 
           var marker = new google.maps.Marker({
